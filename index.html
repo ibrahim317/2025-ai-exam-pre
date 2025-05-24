@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Model Exam: CIS243 - Artificial Intelligence (2025)</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* Light gray background for contrast with the page */
+            font-family: 'Georgia', serif; /* Changed to Georgia for a more classic academic feel */
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        .page {
+            background-color: white;
+            width: 21cm; /* A4 width */
+            min-height: 29.7cm; /* A4 height */
+            margin: 1cm auto; /* Centering the page with margin */
+            padding: 1.5cm 2cm; /* Inner padding for content */
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Subtle shadow for page effect */
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+        .header, .footer {
+            text-align: center;
+            margin-bottom: 25px; /* Increased margin */
+            padding-bottom: 15px; /* Added padding */
+            border-bottom: 1px solid #eee; /* Lighter border */
+        }
+        .footer {
+            border-top: 1px solid #eee; /* Lighter border */
+            border-bottom: none;
+            margin-top: 30px;
+            padding-top: 15px;
+        }
+        .question-section {
+            margin-bottom: 35px; /* Increased margin */
+            border-bottom: 1px solid #e0e0e0; /* Slightly darker, but still light border */
+            padding-bottom: 25px;
+        }
+        .question-section:last-of-type {
+            border-bottom: none; /* No border for the last question section */
+        }
+        .question-title {
+            font-weight: bold;
+            font-size: 1.3em; /* Slightly larger */
+            margin-bottom: 15px; /* Increased margin */
+            color: #333; /* Darker color for titles */
+        }
+        .sub-question-title {
+            font-weight: bold;
+            font-size: 1.1em; /* Adjusted size */
+            margin-left: 15px; /* Adjusted margin */
+            margin-top: 20px; /* Increased margin */
+            margin-bottom: 10px; /* Increased margin */
+            color: #444;
+        }
+        .mcq-options {
+            list-style-type: lower-alpha;
+            padding-left: 30px; /* Adjusted padding */
+            margin-top: 5px;
+        }
+        .mcq-options li {
+            margin-bottom: 5px; /* Spacing between options */
+        }
+        table {
+            width: 100%; /* Responsive table */
+            border-collapse: collapse;
+            margin-top: 15px; /* Increased margin */
+            margin-bottom: 15px; /* Increased margin */
+        }
+        th, td {
+            border: 1px solid #ccc; /* Lighter border */
+            padding: 10px; /* Increased padding */
+            text-align: left;
+        }
+        th {
+            background-color: #f9f9f9; /* Lighter background for headers */
+            font-weight: bold; /* Ensure header text is bold */
+        }
+        .marks {
+            font-style: italic;
+            color: #666; /* Slightly darker gray */
+            font-size: 0.9em;
+        }
+        .instructions {
+            font-style: italic;
+            margin-bottom: 25px; /* Increased margin */
+            color: #555;
+            background-color: #fdfdfd;
+            padding: 10px;
+            border-left: 3px solid #007bff; /* Accent color */
+        }
+        .formula {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f0f8ff; /* Light blue background */
+            padding: 8px 12px; /* Adjusted padding */
+            border: 1px solid #b0c4de; /* Light steel blue border */
+            display: inline-block;
+            margin: 8px 0; /* Adjusted margin */
+            border-radius: 4px; /* Rounded corners */
+            font-size: 0.95em;
+        }
+        .answer-space {
+            margin-top: 15px; /* Increased margin */
+            margin-bottom: 25px; /* Increased margin */
+            border: 1px dashed #bbb; /* Slightly darker dashed border */
+            padding: 15px; /* Increased padding */
+            min-height: 60px; /* Increased min-height */
+            background-color: #fafafa; /* Very light gray background for answer space */
+        }
+        .answer-space p {
+            margin-bottom: 8px; /* Spacing for paragraphs within answer space */
+        }
+        h1, h2, h3 {
+             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Modern sans-serif */
+             color: #222; /* Darker headings */
+        }
+        h2 {
+            font-size: 1.8em;
+        }
+        h3 {
+            font-size: 1.5em;
+        }
+
+        /* Specific styles for table in 2.2 */
+        .confusion-matrix-table th, .confusion-matrix-table td {
+            text-align: center; /* Center text in confusion matrix */
+        }
+        .confusion-matrix-table th[rowspan="2"], .confusion-matrix-table th[colspan="2"] {
+            vertical-align: middle;
+        }
+
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <div class="header">
+        <h2>FCIS - Ain Shams University</h2>
+        <h3>Subject: CIS243 - Artificial Intelligence</h3>
+        <h3>Exam: (Final) Model Exam 2025</h3>
+        <p>Year: 2<sup>nd</sup> level undergraduate</p>
+        <p>Total duration: 2 Hours</p>
+        <p class="instructions">Answer the following Three questions:</p>
+        <p class="marks">(Total Marks: 50)</p>
+    </div>
+
+    <!-- 1st Question: Choose the Correct Answer -->
+    <div class="question-section">
+        <h3 class="question-title">1<sup>st</sup> Question: Choose the Correct Answer <span class="marks">(Marks: 10)</span></h3>
+        <p class="instructions">(Please write your answer in the provided answer sheet/table)</p>
+
+        <ol>
+            <li>
+                Which of the following regularization techniques is most likely to result in sparse weights (i.e., many weights becoming exactly zero)?
+                <ul class="mcq-options">
+                    <li>L1 Regularization (Lasso)</li>
+                    <li>L2 Regularization (Ridge)</li>
+                    <li>Dropout</li>
+                    <li>Early Stopping</li>
+                </ul>
+            </li>
+            <li>
+                In the context of Machine Learning, an algorithm that learns the probability distribution P(X) of the input data X is known as a:
+                <ul class="mcq-options">
+                    <li>Discriminative model</li>
+                    <li>Generative model</li>
+                    <li>Regression model</li>
+                    <li>Reinforcement learning model</li>
+                </ul>
+            </li>
+            <li>
+                In a Convolutional Neural Network (CNN), which layer is primarily responsible for reducing the spatial dimensions (width and height) of the input volume?
+                <ul class="mcq-options">
+                    <li>Convolutional Layer</li>
+                    <li>Pooling Layer</li>
+                    <li>Fully Connected Layer</li>
+                    <li>Activation Layer</li>
+                </ul>
+            </li>
+            <li>
+                A point in DBSCAN that is not a core point but lies within the epsilon-neighborhood of a core point is called a:
+                <ul class="mcq-options">
+                    <li>Noise point</li>
+                    <li>Core point</li>
+                    <li>Border point</li>
+                    <li>Centroid</li>
+                </ul>
+            </li>
+            <li>
+                The learning rate in gradient descent is an example of a:
+                <ul class="mcq-options">
+                    <li>Parameter</li>
+                    <li>Hyperparameter</li>
+                    <li>Feature</li>
+                    <li>Metric</li>
+                </ul>
+            </li>
+            <li>
+                Which school of thought in AI emphasizes that intelligence arises from the manipulation of symbols according to formal rules?
+                <ul class="mcq-options">
+                    <li>Connectionism</li>
+                    <li>Behaviorism</li>
+                    <li>Symbolism</li>
+                    <li>Evolutionary Computing</li>
+                </ul>
+            </li>
+            <li>
+                In the Machine Learning Process, which step typically follows Feature Extraction?
+                <ul class="mcq-options">
+                    <li>Data Cleansing</li>
+                    <li>Model Training</li>
+                    <li>Data Collection</li>
+                    <li>Model Deployment</li>
+                </ul>
+            </li>
+            <li>
+                In a Semantic Network, what do the edges typically represent?
+                <ul class="mcq-options">
+                    <li>Concepts</li>
+                    <li>Relations</li>
+                    <li>Attributes</li>
+                    <li>Rules</li>
+                </ul>
+            </li>
+            <li>
+                Which technique involves creating new synthetic data points for the minority class to address class imbalance?
+                <ul class="mcq-options">
+                    <li>Random Undersampling</li>
+                    <li>Principal Component Analysis (PCA)</li>
+                    <li>SMOTE (Synthetic Minority Over-sampling Technique)</li>
+                    <li>K-Means Clustering</li>
+                </ul>
+            </li>
+            <li>
+                Which activation function is known to suffer from the "dying ReLU" problem if learning rates are not set carefully?
+                <ul class="mcq-options">
+                    <li>Sigmoid</li>
+                    <li>Tanh</li>
+                    <li>ReLU</li>
+                    <li>Softmax</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <!-- 2nd Question: Problem Solving -->
+    <div class="question-section">
+        <h3 class="question-title">2<sup>nd</sup> Question: <span class="marks">(Marks: 20)</span></h3>
+
+        <div class="sub-question-title">2.1 - (10 Marks) Apply the linear regression algorithm on the following dataset. Learning rate (η) = 0.01, initial value of a = 1 and b = 0.5. What is the value of 'a' and 'b' after <strong>one epoch</strong> using <strong>Minibatch Gradient Descent</strong> with a batch size = 2?
+            <p>The dataset is:
+            x = [10, 20, 30, 40]
+            y = [25, 45, 60, 85]
+            </p>
+            <p>Formulas for updating 'a' and 'b' in Minibatch Gradient Descent (per batch):</p>
+            <p><span class="formula">a<sub>new</sub> = a<sub>old</sub> + η * (1/m) * Σ(y<sub>t</sub> - y<sub>p</sub>) * x</span></p>
+            <p><span class="formula">b<sub>new</sub> = b<sub>old</sub> + η * (1/m) * Σ(y<sub>t</sub> - y<sub>p</sub>)</span></p>
+            <p>Where y<sub>p</sub> = a<sub>old</sub>*x + b<sub>old</sub>, and 'm' is the batch size.</p>
+        </div>
+        <div class="answer-space">
+            <p><strong>Show your work for Batch 1:</strong></p>
+            <p>a<sub>updated_after_batch1</sub> = </p>
+            <p>b<sub>updated_after_batch1</sub> = </p>
+            <br>
+            <p><strong>Show your work for Batch 2 (using updated a and b from Batch 1):</strong></p>
+            <p>a<sub>final_after_epoch</sub> = </p>
+            <p>b<sub>final_after_epoch</sub> = </p>
+        </div>
+
+        <div class="sub-question-title">2.2 - (10 Marks) A machine learning model has been trained to identify whether an email is "Spam" or "Not Spam". The scientists used 200 emails for testing. The actual number of Spam emails is 60. The model predicted 70 emails as Spam, out of which 50 were actually Spam.
+            <ol type="a">
+                <li>(4 Marks) Fill the Confusion Matrix.</li>
+                <li>(4 Marks) What is the value of the model's Precision and Recall for the "Spam" class?</li>
+                <li>(2 Marks) What is the value of the model's Harmonic Mean (F1-Score) for the "Spam" class?</li>
+            </ol>
+        </div>
+        <div class="answer-space">
+            <p><strong>a) Confusion Matrix:</strong></p>
+            <table class="confusion-matrix-table">
+                <tr>
+                    <th rowspan="2"></th>
+                    <th colspan="2">Predicted</th>
+                </tr>
+                <tr>
+                    <th>Spam</th>
+                    <th>Not Spam</th>
+                </tr>
+                <tr>
+                    <th>Actual Spam</th>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Actual Not Spam</th>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+            <p><strong>b) Precision and Recall:</strong></p>
+            <p>Precision (Spam) = </p>
+            <p>Recall (Spam) = </p>
+            <p><strong>c) Harmonic Mean (F1-Score):</strong></p>
+            <p>F1-Score (Spam) = </p>
+        </div>
+    </div>
+
+    <!-- 3rd Question: Problem Solving -->
+    <div class="question-section">
+        <h3 class="question-title">3<sup>rd</sup> Question: Solve the following problem <span class="marks">(Marks: 20)</span></h3>
+
+        <div class="sub-question-title">3.1 - (10 Marks) Given the following distance matrix between 8 data points (A1 to A8). If epsilon (ε) is 3.5 and minimum points (MinPts) is 2, what are the clusters that the DBSCAN algorithm would discover? Identify Core, Border, and Noise points.
+            <table>
+                <tr><th>Point</th><th>A1</th><th>A2</th><th>A3</th><th>A4</th><th>A5</th><th>A6</th><th>A7</th><th>A8</th></tr>
+                <tr><td>A1</td><td>0</td><td>5</td><td>8</td><td>2</td><td>9</td><td>10</td><td>12</td><td>3</td></tr>
+                <tr><td>A2</td><td>5</td><td>0</td><td>4</td><td>6</td><td>5</td><td>7</td><td>9</td><td>7</td></tr>
+                <tr><td>A3</td><td>8</td><td>4</td><td>0</td><td>7</td><td>3</td><td>2</td><td>10</td><td>9</td></tr>
+                <tr><td>A4</td><td>2</td><td>6</td><td>7</td><td>0</td><td>8</td><td>9</td><td>11</td><td>1</td></tr>
+                <tr><td>A5</td><td>9</td><td>5</td><td>3</td><td>8</td><td>0</td><td>1</td><td>8</td><td>10</td></tr>
+                <tr><td>A6</td><td>10</td><td>7</td><td>2</td><td>9</td><td>1</td><td>0</td><td>9</td><td>11</td></tr>
+                <tr><td>A7</td><td>12</td><td>9</td><td>10</td><td>11</td><td>8</td><td>9</td><td>0</td><td>13</td></tr>
+                <tr><td>A8</td><td>3</td><td>7</td><td>9</td><td>1</td><td>10</td><td>11</td><td>13</td><td>0</td></tr>
+            </table>
+        </div>
+        <div class="answer-space">
+            <p><strong>Identify Epsilon-Neighborhood for each point (N<sub>ε</sub>(point)):</strong></p>
+            <p>N<sub>3.5</sub>(A1) = {Points within 3.5 distance of A1, excluding A1 itself}</p>
+            <p>N<sub>3.5</sub>(A2) = ...</p>
+            <p>...</p>
+            <p>N<sub>3.5</sub>(A8) = ...</p>
+            <br>
+            <p><strong>Identify Core, Border, and Noise Points:</strong></p>
+            <p>Core Points (Points with |N<sub>ε</sub>| + 1 >= MinPts):</p>
+            <p>Border Points:</p>
+            <p>Noise Points:</p>
+            <br>
+            <p><strong>Resulting Clusters:</strong></p>
+            <p>Cluster 1 = {}</p>
+            <p>Cluster 2 = {} (if any)</p>
+            <p>Noise = {}</p>
+        </div>
+
+        <div class="sub-question-title">3.2 - (10 Marks) To build a Decision Tree using the ID3 Algorithm, the Entropy and Information Gain are calculated.
+            <br>Dataset:
+            <table>
+                <tr><th>Outlook</th><th>Temperature</th><th>Humidity</th><th>Windy</th><th>PlayTennis</th></tr>
+                <tr><td>Sunny</td><td>Hot</td><td>High</td><td>False</td><td>No</td></tr>
+                <tr><td>Sunny</td><td>Hot</td><td>High</td><td>True</td><td>No</td></tr>
+                <tr><td>Overcast</td><td>Hot</td><td>High</td><td>False</td><td>Yes</td></tr>
+                <tr><td>Rain</td><td>Mild</td><td>High</td><td>False</td><td>Yes</td></tr>
+                <tr><td>Rain</td><td>Cool</td><td>Normal</td><td>False</td><td>Yes</td></tr>
+                <tr><td>Rain</td><td>Cool</td><td>Normal</td><td>True</td><td>No</td></tr>
+                <tr><td>Overcast</td><td>Cool</td><td>Normal</td><td>True</td><td>Yes</td></tr>
+                <tr><td>Sunny</td><td>Mild</td><td>High</td><td>False</td><td>No</td></tr>
+                <tr><td>Sunny</td><td>Cool</td><td>Normal</td><td>False</td><td>Yes</td></tr>
+                <tr><td>Rain</td><td>Mild</td><td>Normal</td><td>False</td><td>Yes</td></tr>
+                <tr><td>Sunny</td><td>Mild</td><td>Normal</td><td>True</td><td>Yes</td></tr>
+                <tr><td>Overcast</td><td>Mild</td><td>High</td><td>True</td><td>Yes</td></tr>
+                <tr><td>Overcast</td><td>Hot</td><td>Normal</td><td>False</td><td>Yes</td></tr>
+                <tr><td>Rain</td><td>Mild</td><td>High</td><td>True</td><td>No</td></tr>
+            </table>
+            <p>Formulas:</p>
+            <p><span class="formula">Entropy(S) = Σ -p<sub>i</sub> log<sub>2</sub>p<sub>i</sub></span></p>
+            <p><span class="formula">Gain(S, A) = Entropy(S) - Σ (|S<sub>v</sub>|/|S|) * Entropy(S<sub>v</sub>)</span></p>
+            <ol type="a">
+                <li>(8 Marks) Calculate the Entropy of the entire dataset (Entropy(PlayTennis)). Then, calculate the Information Gain for the "Outlook" attribute and the "Windy" attribute. Show your steps. (log<sub>2</sub>(x) values will be provided if needed, or use approximations like log<sub>2</sub>(0.5) = -1, log<sub>2</sub>(1) = 0). For this question, assume:
+                    log<sub>2</sub>(5/14) ≈ -1.485, log<sub>2</sub>(9/14) ≈ -0.637, log<sub>2</sub>(2/5) ≈ -1.322, log<sub>2</sub>(3/5) ≈ -0.737, log<sub>2</sub>(4/5) ≈ -0.322,
+                    log<sub>2</sub>(4/14) ≈ -1.807, log<sub>2</sub>(2/4)= -1, log<sub>2</sub>(3/4) ≈ -0.415,
+                    log<sub>2</sub>(6/14) ≈ -1.222, log<sub>2</sub>(8/14) ≈ -0.807, log<sub>2</sub>(3/8) ≈ -1.415, log<sub>2</sub>(5/8) ≈ -0.678, log<sub>2</sub>(6/8) = log<sub>2</sub>(3/4) ≈ -0.415, log<sub>2</sub>(2/8)=log<sub>2</sub>(1/4)=-2.
+                </li>
+                <li>(2 Marks) Which attribute ("Outlook" or "Windy") would be chosen as the root node? Why?</li>
+            </ol>
+        </div>
+        <div class="answer-space">
+            <p><strong>a) Calculations:</strong></p>
+            <p>Entropy(PlayTennis) = </p>
+            <br>
+            <p>Entropy(PlayTennis | Outlook=Sunny) = </p>
+            <p>Entropy(PlayTennis | Outlook=Overcast) = </p>
+            <p>Entropy(PlayTennis | Outlook=Rain) = </p>
+            <p>Gain(PlayTennis, Outlook) = </p>
+            <br>
+            <p>Entropy(PlayTennis | Windy=False) = </p>
+            <p>Entropy(PlayTennis | Windy=True) = </p>
+            <p>Gain(PlayTennis, Windy) = </p>
+            <br>
+            <p><strong>b) Root Node Choice:</strong></p>
+            <p>The attribute chosen for the root node is: </p>
+            <p>Reason: </p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p><em>With Our Best Wishes.</em></p>
+    </div>
+
+</div> <!-- Closing page div -->
+</body>
+</html>
