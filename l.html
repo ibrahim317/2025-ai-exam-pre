@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Algebra Curriculum (with Saving)</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1 {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 20px;
+        }
+
+        li {
+            background-color: #fff;
+            margin: 5px 0;
+            padding: 10px 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        li:hover {
+            background-color: #e9ecef;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+            cursor: pointer;
+            transform: scale(1.1);
+        }
+
+        label {
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .cite {
+            font-size: 0.8em;
+            color: #666;
+            margin-left: 5px;
+        }
+
+        .question {
+            color: #ffc107;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        /* Style for nested lists */
+        ul ul {
+            margin-top: 10px;
+            border-left: 2px solid #ddd;
+            padding-left: 25px; /* Increase indentation */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            body {
+                margin: 10px;
+            }
+            ul {
+                padding-left: 10px;
+            }
+            ul ul {
+                padding-left: 15px;
+            }
+            li {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Linear Algebra Curriculum</h1>
+
+    <ul id="curriculum-list">
+        <li>
+            <label><input type="checkbox" id="l1"> Lecture 1 & 2: Systems of Linear Equations & Gaussian Elimination</label>
+            <ul>
+                <li>
+                    <label><input type="checkbox" id="l1-1"> Introduction to Linear Equations </label>
+                    <ul>
+                        <li><label><input type="checkbox" id="l1-1-1"> Definition and General Form <span class="cite"></span> </label></li>
+                        <li><label><input type="checkbox" id="l1-1-2"> Identifying Linear vs. Non-Linear Equations <span class="cite"></span> </label></li>
+                        <li><label><input type="checkbox" id="l1-1-3"> Solutions and Solution Sets <span class="cite"></span> </label></li>
+                        <li><label><input type="checkbox" id="l1-1-4"> Finding Solution Sets (Parameters) <span class="cite"></span> </label></li>
+                    </ul>
+                </li>
+                <li>
+                    <label><input type="checkbox" id="l1-2"> Systems of Linear Equations (Linear Systems) </label>
+                    <ul>
+                        <li><label><input type="checkbox" id="l1-2-1"> Definition <span class="cite"></span> </label></li>
+                        <li><label><input type="checkbox" id="l1-2-2"> Solutions (No Solution, One Solution, Infinite Solutions) <span class="cite"></span> </label></li>
+                        <li><label><input type="checkbox" id="l1-2-3"> Consistent vs. Inconsistent Systems <span class="cite"></span> </label></li>
+                        <li><label><input type="checkbox" id="l1-2-4"> Homogeneous vs. Non-Homogeneous Systems <span class="cite"></span> </label></li>
+                    </ul>
+                </li>
+                <li>
+                    <label><input type="checkbox" id="l1-3"> Gaussian Elimination </label>
+                    <ul>
+                        <li><label><input type="checkbox" id="l1-3-1"> Matrix Form (Ax=B) <span class="cite"></span> </label></li>
+                        <li><label><input type="checkbox" id="l1-3-2"> Augmented Matrix <span class="cite"></span> </label></li>
+                        <li><label><input type="checkbox" id="l1-3-3"> Elementary Row Operations (EROs) <span class="cite"></span> </label></li>
+                        <li><label><input type="checkbox" id="l1-3-4"> Row Echelon Form (REF) <span class="cite"></span> </label></li>
+                        <li><label><input type="checkbox" id="l1-3-5"> Reduced Row Echelon Form (RREF) <span class="cite"></span> </label></li>
+                        <li><label><input type="checkbox" id="l1-3-6"> Gauss-Jordan Elimination <span class="cite"></span> </label></li>
+                        <li><label><input type="checkbox" id="l1-3-7"> Back Substitution <span class="cite"></span> </label></li>
+                        <li><label><input type="checkbox" id="l1-3-8"> Solving Examples (Unique, Infinite, No Solution) <span class="cite"></span> <span class="question">?</span></label></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <label><input type="checkbox" id="l2"> Lecture 1 & 3: Matrix Operations & Inverse</label>
+            <ul>
+                <li>
+                    <label><input type="checkbox" id="l2-1"> Matrix Basics </label>
+                    <ul>
+                        <li><label><input type="checkbox" id="l2-1-1"> Definition, Size, Entries <span class="cite"></span> </label></li>
+                        <li><label><input type="checkbox" id="l2-1-2"> Notation & Terminology <span class="cite"></span> </label></li>
+                        <li><label><input type="checkbox" id="l2-1-3"> Special Matrices (Square, Diagonal, Identity, etc.) <span class="cite"></span> </label></li>
+                    </ul>
+                </li>
+                <li>
+                    <label><input type="checkbox" id="l2-2"> Matrix Operations </label>
+                    <ul>
+                        <li><label><input type="checkbox" id="l2-2-1"> Equality <span class="cite"></span> </label></li>
+                        <li><label><input type="checkbox" id="l2-2-2"> Addition & Subtraction <span class="cite"></span> </label></li>
+                        <li><label><input type="checkbox" id="l2-2-3"> Scalar Multiplication <span class="cite"></span> </label></li>
+                        <li><label><input type="checkbox" id="l2-2-4"> Matrix Multiplication <span class="cite"></span> </label></li>
+                        <li><label><input type="checkbox" id="l2-2-5"> Transpose <span class="cite"></span> </label></li>
+                        <li><label><input type="checkbox" id="l2-2-6"> Powers <span class="cite"></span> </label></li>
+                    </ul>
+                </li>
+                <li><label><input type="checkbox" id="l2-3"> Properties of Operations <span class="cite"></span> </label></li>
+                <li>
+                    <label><input type="checkbox" id="l2-4"> Inverse of a Matrix</label>
+                    <ul>
+                        <li><label><input type="checkbox" id="l2-4-1"> Definition (AA⁻¹ = I) <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l2-4-2"> Verifying Inverses <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l2-4-3"> Finding Inverses (Gauss-Jordan) <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l2-4-4"> Singular vs. Non-Singular Matrices <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l2-4-5"> Properties of Inverses <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l2-4-6"> Using Inverses to Solve Systems <span class="cite"></span></label></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+         <li>
+            <label><input type="checkbox" id="l3"> Lecture 4 & 5: Determinants & Applications</label>
+            <ul>
+                <li>
+                    <label><input type="checkbox" id="l3-1"> Calculating Determinants</label>
+                    <ul>
+                        <li><label><input type="checkbox" id="l3-1-1"> 2x2 Matrices <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l3-1-2"> 3x3 Matrices (Sarrus' Rule / Expansion) <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l3-1-3"> Minors & Cofactors (Expansion by Cofactors) <span class="cite"></span></label></li>
+                    </ul>
+                </li>
+                <li>
+                    <label><input type="checkbox" id="l3-2"> Properties of Determinants</label>
+                    <ul>
+                        <li><label><input type="checkbox" id="l3-2-1"> Triangular Matrices <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l3-2-2"> Effect of EROs <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l3-2-3"> Conditions for Zero Determinant <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l3-2-4"> Product, Scalar Multiple, Inverse, Transpose <span class="cite"></span></label></li>
+                    </ul>
+                </li>
+                <li>
+                    <label><input type="checkbox" id="l3-3"> Applications</label>
+                    <ul>
+                        <li><label><input type="checkbox" id="l3-3-1"> Invertibility Test <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l3-3-2"> Adjoint Method for Inverse <span class="cite"></span></label></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <label><input type="checkbox" id="l4"> Lecture 6: Applications - Cryptography</label>
+            <ul>
+                <li><label><input type="checkbox" id="l4-1"> Hill Cipher Overview <span class="cite"></span></label></li>
+                <li><label><input type="checkbox" id="l4-2"> Encryption (C = AP) <span class="cite"></span></label></li>
+                <li><label><input type="checkbox" id="l4-3"> Key Matrix Requirements <span class="cite"></span></label></li>
+                <li><label><input type="checkbox" id="l4-4"> Decryption (P = A⁻¹C) <span class="cite"></span></label></li>
+                <li><label><input type="checkbox" id="l4-5"> Modulo Arithmetic & Inverse Modulo 26 <span class="cite"></span></label></li>
+            </ul>
+        </li>
+        <li>
+            <label><input type="checkbox" id="l5"> Lecture 7 & 8: Vector Spaces & Subspaces</label>
+            <ul>
+                <li>
+                    <label><input type="checkbox" id="l5-1"> Vector Spaces</label>
+                    <ul>
+                        <li><label><input type="checkbox" id="l5-1-1"> Definition and Main Families (Rⁿ, Pₙ, Mₘₓₙ) <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l5-1-2"> Operations (Standard vs. Non-Standard) <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l5-1-3"> Zero Vector and Negative Vector <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l5-1-4"> Checking Vector Space Axioms <span class="cite"></span></label></li>
+                    </ul>
+                </li>
+                <li>
+                    <label><input type="checkbox" id="l5-2"> Subspaces</label>
+                    <ul>
+                        <li><label><input type="checkbox" id="l5-2-1"> Definition <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l5-2-2"> Subspace Test (Closure) <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l5-2-3"> Examples <span class="cite"></span></label></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <label><input type="checkbox" id="l6"> Lecture 9 & 10: Eigenvalues, Eigenvectors & Diagonalization</label>
+            <ul>
+                <li>
+                    <label><input type="checkbox" id="l6-1"> Eigenvalues & Eigenvectors</label>
+                    <ul>
+                        <li><label><input type="checkbox" id="l6-1-1"> Definition (Ax = λx) <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l6-1-2"> Finding Eigenvalues (det(λI - A) = 0) <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l6-1-3"> Finding Eigenvectors ((λI - A)x = 0) <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l6-1-4"> Characteristic Polynomial <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l6-1-5"> Eigenspace <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l6-1-6"> Properties (Triangular Matrices, Distinct Eigenvalues) <span class="cite"></span></label></li>
+                    </ul>
+                </li>
+                <li>
+                    <label><input type="checkbox" id="l6-2"> Diagonalization</label>
+                    <ul>
+                        <li><label><input type="checkbox" id="l6-2-1"> Definition (A = PDP⁻¹) <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l6-2-2"> Conditions for Diagonalizability <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l6-2-3"> Finding P and D <span class="cite"></span></label></li>
+                        <li><label><input type="checkbox" id="l6-2-4"> Application (Calculating Aᵏ) <span class="cite"></span></label></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkboxes = document.querySelectorAll('#curriculum-list input[type="checkbox"]');
+            const storageKey = 'linearAlgebraCurriculumState';
+
+            // --- Local Storage Functions ---
+
+            function saveState() {
+                const checkedIds = [];
+                checkboxes.forEach(cb => {
+                    if (cb.checked) {
+                        checkedIds.push(cb.id);
+                    }
+                });
+                localStorage.setItem(storageKey, JSON.stringify(checkedIds));
+                console.log("State Saved:", checkedIds);
+            }
+
+            function loadState() {
+                const savedState = localStorage.getItem(storageKey);
+                if (savedState) {
+                    const checkedIds = JSON.parse(savedState);
+                    console.log("State Loaded:", checkedIds);
+
+                    // Uncheck all first
+                    checkboxes.forEach(cb => cb.checked = false);
+
+                    // Check the saved ones
+                    checkedIds.forEach(id => {
+                        const cb = document.getElementById(id);
+                        if (cb) {
+                            cb.checked = true;
+                        }
+                    });
+
+                    // Update parent states after loading
+                    checkboxes.forEach(cb => updateParentCheckbox(cb, false)); // Pass false to prevent re-saving
+                } else {
+                    console.log("No saved state found.");
+                     // Optional: If no saved state, check based on [done]
+                     document.querySelectorAll('.done').forEach(span => {
+                         const label = span.closest('label');
+                         if (label) {
+                             const checkbox = label.querySelector('input[type="checkbox"]');
+                             // Only check if it's 'done' and not '?'
+                             if (checkbox && !span.nextElementSibling?.classList.contains('question')) {
+                                 checkbox.checked = true;
+                             }
+                         }
+                    });
+                    // Update parents after initial 'done' checks
+                    checkboxes.forEach(cb => updateParentCheckbox(cb, false)); 
+                }
+            }
+
+            // --- Checkbox Logic Functions ---
+
+            function setChildrenChecked(listItem, isChecked) {
+                const nestedList = listItem.querySelector('ul');
+                if (nestedList) {
+                    const childCheckboxes = nestedList.querySelectorAll('input[type="checkbox"]');
+                    childCheckboxes.forEach(child => {
+                        if (child.checked !== isChecked) {
+                           child.checked = isChecked;
+                           // Recursively set grandchildren
+                           setChildrenChecked(child.closest('li'), isChecked);
+                        }
+                    });
+                }
+            }
+
+            function updateParentCheckbox(checkbox, shouldSave = true) {
+                const parentLi = checkbox.closest('ul')?.closest('li');
+                if (!parentLi) {
+                    return; // No parent, exit
+                }
+
+                const parentCheckbox = parentLi.querySelector('input[type="checkbox"]');
+                const siblingList = parentLi.querySelector('ul');
+                const siblingCheckboxes = Array.from(siblingList.querySelectorAll('input[type="checkbox"]'));
+
+                const allChecked = siblingCheckboxes.length > 0 && siblingCheckboxes.every(cb => cb.checked);
+                const anyChecked = siblingCheckboxes.some(cb => cb.checked || cb.indeterminate);
+
+                const oldChecked = parentCheckbox.checked;
+                const oldIndeterminate = parentCheckbox.indeterminate;
+
+                if (allChecked) {
+                    parentCheckbox.checked = true;
+                    parentCheckbox.indeterminate = false;
+                } else if (anyChecked) {
+                    parentCheckbox.checked = false; 
+                    parentCheckbox.indeterminate = true;
+                } else {
+                    parentCheckbox.checked = false;
+                    parentCheckbox.indeterminate = false;
+                }
+                
+                // Only update higher parents if state changed
+                if (oldChecked !== parentCheckbox.checked || oldIndeterminate !== parentCheckbox.indeterminate) {
+                   updateParentCheckbox(parentCheckbox, shouldSave); // Recurse
+                } else if(shouldSave) {
+                   saveState(); // Save even if parent didn't change, as child did.
+                }
+            }
+
+            // --- Event Listener ---
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', (e) => {
+                    const currentCheckbox = e.target;
+                    const isChecked = currentCheckbox.checked;
+                    const listItem = currentCheckbox.closest('li');
+
+                    // Propagate to children
+                    setChildrenChecked(listItem, isChecked);
+                    
+                    // Clear indeterminate state when manually changed
+                    currentCheckbox.indeterminate = false; 
+
+                    // Update parents
+                    updateParentCheckbox(currentCheckbox, true); // Pass true to save state
+
+                    // Ensure save happens (especially if no parent update occurs)
+                    saveState(); 
+                });
+            });
+
+            // --- Initial Load ---
+            loadState();
+        });
+    </script>
+
+</body>
+</html>
