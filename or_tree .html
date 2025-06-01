@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operations Research Tree</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        label {
+            cursor: pointer;
+        }
+
+        .nested {
+            display: block; /* Initially show all levels */
+            padding-left: 20px; /* Indent nested lists */
+        }
+
+        /* Styling for top-level items (headings) */
+        li > input[type="checkbox"][data-level="0"] + label {
+            font-size: 1.5em; /* Make top-level labels bigger */
+            font-weight: bold;
+            color: #0056b3; /* A distinct color for headings */
+            margin-top: 20px; /* Add space above headings */
+            display: inline-block; /* Allows margin-top to work correctly */
+        }
+
+        li > input[type="checkbox"][data-level="0"]:checked + label {
+            color: #003d82; /* Darker shade when checked */
+        }
+
+        /* Add a separator line above top-level items, except the first one */
+        li:has(> input[type="checkbox"][data-level="0"]):not(:first-child) {
+            border-top: 2px solid #ddd; /* Separator line */
+            padding-top: 15px; /* Space above the separator */
+            margin-top: 15px; /* Additional space for the section */
+        }
+         /* Style for other levels to ensure proper spacing and font */
+        li > input[type="checkbox"][data-level="1"] + label {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        li > input[type="checkbox"][data-level="2"] + label {
+            font-size: 1.0em;
+            font-weight: normal; /* Deeper levels can be normal weight */
+        }
+         li > input[type="checkbox"][data-level="3"] + label {
+            font-size: 0.9em;
+        }
+
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            body {
+                margin: 10px;
+            }
+            .container {
+                padding: 15px;
+            }
+            ul {
+                padding-left: 10px;
+            }
+            .nested {
+                padding-left: 10px;
+            }
+            li > input[type="checkbox"][data-level="0"] + label {
+                font-size: 1.3em;
+            }
+            li > input[type="checkbox"][data-level="1"] + label {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Operations Research Content</h1>
+        <ul id="orTree">
+            <li>
+                <input type="checkbox" id="item-0" data-level="0"><label for="item-0">1. Introduction to Operations Research</label>
+                <ul class="nested">
+                    <li>
+                        <input type="checkbox" id="item-1" data-level="1"><label for="item-1">1.1. What is Operations Research?</label>
+                        <ul class="nested">
+                            <li><input type="checkbox" id="item-2" data-level="2"><label for="item-2">Definition: An art and a science, a scientific approach to decision-making.</label></li>
+                            <li>
+                                <input type="checkbox" id="item-3" data-level="2"><label for="item-3">Core Components:</label>
+                                <ul class="nested">
+                                    <li><input type="checkbox" id="item-4" data-level="3"><label for="item-4">Mathematical modeling of complex situations.</label></li>
+                                    <li><input type="checkbox" id="item-5" data-level="3"><label for="item-5">Development of solution techniques.</label></li>
+                                </ul>
+                            </li>
+                            <li><input type="checkbox" id="item-6" data-level="2"><label for="item-6">Terminology: Also known as Operational Research in Europe.</label></li>
+                            <li><input type="checkbox" id="item-7" data-level="2"><label for="item-7">Objective: To find optimal solutions for complex problems, such as maximizing profit or minimizing costs.</label></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="item-8" data-level="1"><label for="item-8">1.2. History and Applications</label>
+                        <ul class="nested">
+                            <li><input type="checkbox" id="item-9" data-level="2"><label for="item-9">Origins: World War II.</label></li>
+                            <li><input type="checkbox" id="item-10" data-level="2"><label for="item-10">Application Areas: Military, industry, business, public sector, healthcare, national planning, and budgeting.</label></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="item-11" data-level="1"><label for="item-11">1.3. The Operations Research Process</label>
+                        <ul class="nested">
+                            <li>
+                                <input type="checkbox" id="item-12" data-level="2"><label for="item-12">General Steps:</label>
+                                <ul class="nested">
+                                    <li><input type="checkbox" id="item-13" data-level="3"><label for="item-13">1. Identify the problem.</label></li>
+                                    <li><input type="checkbox" id="item-14" data-level="3"><label for="item-14">2. Formulate a mathematical model.</label></li>
+                                    <li><input type="checkbox" id="item-15" data-level="3"><label for="item-15">3. Develop algorithms or use computer packages.</label></li>
+                                    <li><input type="checkbox" id="item-16" data-level="3"><label for="item-16">4. Obtain a numerical solution.</label></li>
+                                    <li><input type="checkbox" id="item-17" data-level="3"><label for="item-17">5. Implement the solution.</label></li>
+                                </ul>
+                            </li>
+                            <li><input type="checkbox" id="item-18" data-level="2"><label for="item-18">Role of Computers: Essential for handling complex problems with large calculations.</label></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="item-19" data-level="1"><label for="item-19">1.4. Optimal Solutions</label>
+                        <ul class="nested">
+                            <li><input type="checkbox" id="item-20" data-level="2"><label for="item-20">Definition: A feasible solution where the objective function reaches its maximum or minimum value.</label></li>
+                            <li><input type="checkbox" id="item-21" data-level="2"><label for="item-21">Global vs. Local Optima: A globally optimal solution is the best among all feasible solutions.</label></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <input type="checkbox" id="item-22" data-level="0"><label for="item-22">2. Linear Programming (LP)</label>
+                <ul class="nested">
+                    <li>
+                        <input type="checkbox" id="item-23" data-level="1"><label for="item-23">2.1. Introduction to Linear Programming</label>
+                        <ul class="nested">
+                            <li>
+                                <input type="checkbox" id="item-24" data-level="2"><label for="item-24">Course Plan Overview:</label>
+                                <ul class="nested">
+                                    <li><input type="checkbox" id="item-25" data-level="3"><label for="item-25">LP Modeling and Graphical Solution.</label></li>
+                                    <li><input type="checkbox" id="item-26" data-level="3"><label for="item-26">Simplex Method.</label></li>
+                                    <li><input type="checkbox" id="item-27" data-level="3"><label for="item-27">Duality Theory and Sensitivity Analysis.</label></li>
+                                    <li><input type="checkbox" id="item-28" data-level="3"><label for="item-28">Integer Programming and its applications.</label></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="item-29" data-level="1"><label for="item-29">2.2. Formulating Linear Programming Models</label>
+                        <ul class="nested">
+                            <li>
+                                <input type="checkbox" id="item-30" data-level="2"><label for="item-30">Steps for Formulation:</label>
+                                <ul class="nested">
+                                    <li><input type="checkbox" id="item-31" data-level="3"><label for="item-31">1. Identify decision variables.</label></li>
+                                    <li><input type="checkbox" id="item-32" data-level="3"><label for="item-32">2. Define the objective function.</label></li>
+                                    <li><input type="checkbox" id="item-33" data-level="3"><label for="item-33">3. Establish constraints.</label></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="item-34" data-level="2"><label for="item-34">Example: Iron Works, Inc.</label>
+                                <ul class="nested">
+                                    <li><input type="checkbox" id="item-35" data-level="3"><label for="item-35">Problem Description: Manufacturing two products with limited steel supply and specific production requirements.</label></li>
+                                    <li>
+                                        <input type="checkbox" id="item-36" data-level="3"><label for="item-36">Mathematical Model:</label>
+                                        <ul class="nested">
+                                            <li><input type="checkbox" id="item-37" data-level="4"><label for="item-37">Decision Variables: $x_1$ and $x_2$ for production levels.</label></li>
+                                            <li><input type="checkbox" id="item-38" data-level="4"><label for="item-38">Objective Function: Maximize $Z = 100x_1 + 200x_2$.</label></li>
+                                            <li>
+                                                <input type="checkbox" id="item-39" data-level="4"><label for="item-39">Constraints:</label>
+                                                <ul class="nested">
+                                                    <li><input type="checkbox" id="item-40" data-level="5"><label for="item-40">Steel: $2x_1 + 3x_2 \leq 2000$.</label></li>
+                                                    <li><input type="checkbox" id="item-41" data-level="5"><label for="item-41">Product 1 Demand: $x_1 \geq 60$.</label></li>
+                                                    <li><input type="checkbox" id="item-42" data-level="5"><label for="item-42">Product 2 Capacity: $x_2 \leq 720$.</label></li>
+                                                    <li><input type="checkbox" id="item-43" data-level="5"><label for="item-43">Non-negativity: $x_1, x_2 \geq 0$.</label></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="item-44" data-level="1"><label for="item-44">2.3. Graphical Solution Method</label>
+                        <ul class="nested">
+                            <li><input type="checkbox" id="item-45" data-level="2"><label for="item-45">Applicability: Suitable for LPs with two decision variables.</label></li>
+                            <li>
+                                <input type="checkbox" id="item-46" data-level="2"><label for="item-46">Procedure:</label>
+                                <ul class="nested">
+                                    <li><input type="checkbox" id="item-47" data-level="3"><label for="item-47">1. Plot each constraint.</label></li>
+                                    <li><input type="checkbox" id="item-48" data-level="3"><label for="item-48">2. Identify the feasible region.</label></li>
+                                    <li><input type="checkbox" id="item-49" data-level="3"><label for="item-49">3. Determine the coordinates of corner points.</label></li>
+                                    <li><input type="checkbox" id="item-50" data-level="3"><label for="item-50">4. Substitute corner points into the objective function.</label></li>
+                                    <li><input type="checkbox" id="item-51" data-level="3"><label for="item-51">5. Select the optimal solution.</label></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="item-52" data-level="2"><label for="item-52">Example (Minimization):</label>
+                                <ul class="nested">
+                                    <li><input type="checkbox" id="item-53" data-level="3"><label for="item-53">LP Formulation: Min $z=5x_{1}+2x_{2}$ with given constraints.</label></li>
+                                    <li><input type="checkbox" id="item-54" data-level="3"><label for="item-54">Graphical Analysis: Plotting constraints and identifying the feasible region.</label></li>
+                                    <li><input type="checkbox" id="item-55" data-level="3"><label for="item-55">Finding the Optimal Solution: Evaluating extreme points.</label></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="item-56" data-level="2"><label for="item-56">Example (Maximization):</label>
+                                <ul class="nested">
+                                    <li><input type="checkbox" id="item-57" data-level="3"><label for="item-57">LP Formulation: Max $z=5x_{1}+7x_{2}$ with given constraints.</label></li>
+                                    <li><input type="checkbox" id="item-58" data-level="3"><label for="item-58">Graphical Analysis: Identifying the feasible region and its five extreme points.</label></li>
+                                    <li><input type="checkbox" id="item-59" data-level="3"><label for="item-59">Finding the Optimal Solution: Evaluating corner points to find the maximum objective value.</label></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="item-60" data-level="1"><label for="item-60">2.4. Special Cases in Linear Programming</label>
+                        <ul class="nested">
+                            <li><input type="checkbox" id="item-61" data-level="2"><label for="item-61">Feasible Region Types: Can be non-existent, a single point, a line, a polygon, or unbounded.</label></li>
+                            <li>
+                                <input type="checkbox" id="item-62" data-level="2"><label for="item-62">LP Categories:</label>
+                                <ul class="nested">
+                                    <li><input type="checkbox" id="item-63" data-level="3"><label for="item-63">1. Infeasible: No solution satisfies all constraints.</label></li>
+                                    <li><input type="checkbox" id="item-64" data-level="3"><label for="item-64">2. Unique or Alternate Optimal Solutions: Objective function is parallel to a boundary constraint.</label></li>
+                                    <li><input type="checkbox" id="item-65" data-level="3"><label for="item-65">3. Unbounded: The objective function can be increased or decreased indefinitely.</label></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <input type="checkbox" id="item-66" data-level="0"><label for="item-66">3. The Simplex Method</label>
+                <ul class="nested">
+                    <li>
+                        <input type="checkbox" id="item-67" data-level="1"><label for="item-67">3.1. Standard Form</label>
+                        <ul class="nested">
+                            <li><input type="checkbox" id="item-68" data-level="2"><label for="item-68">Purpose: Required for implementing the simplex method.</label></li>
+                            <li>
+                                <input type="checkbox" id="item-69" data-level="2"><label for="item-69">Characteristics:</label>
+                                <ul class="nested">
+                                    <li><input type="checkbox" id="item-70" data-level="3"><label for="item-70">Objective function is maximized or minimized.</label></li>
+                                    <li><input type="checkbox" id="item-71" data-level="3"><label for="item-71">All constraints are equalities.</label></li>
+                                    <li><input type="checkbox" id="item-72" data-level="3"><label for="item-72">All variables are non-negative.</label></li>
+                                    <li><input type="checkbox" id="item-73" data-level="3"><label for="item-73">Right-hand side constants are non-negative.</label></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="item-74" data-level="2"><label for="item-74">Conversion to Standard Form:</label>
+                                <ul class="nested">
+                                    <li><input type="checkbox" id="item-75" data-level="3"><label for="item-75">For '≤' constraints, add a slack variable.</label></li>
+                                    <li><input type="checkbox" id="item-76" data-level="3"><label for="item-76">For '≥' constraints, introduce a surplus variable and an artificial variable.</label></li>
+                                    <li><input type="checkbox" id="item-77" data-level="3"><label for="item-77">For '=' constraints, add an artificial variable.</label></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="item-78" data-level="1"><label for="item-78">3.2. Simplex Algorithm</label>
+                        <ul class="nested">
+                            <li>
+                                <input type="checkbox" id="item-79" data-level="2"><label for="item-79">Core Concepts:</label>
+                                <ul class="nested">
+                                    <li><input type="checkbox" id="item-80" data-level="3"><label for="item-80">Focuses on Basic Feasible Solutions (BFS).</label></li>
+                                    <li><input type="checkbox" id="item-81" data-level="3"><label for="item-81">An iterative process to find better BFS solutions.</label></li>
+                                    <li><input type="checkbox" id="item-82" data-level="3"><label for="item-82">Typically starts at the origin.</label></li>
+                                    <li><input type="checkbox" id="item-83" data-level="3"><label for="item-83">Moves between adjacent BFS solutions.</label></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="item-84" data-level="2"><label for="item-84">Tabular Form Steps:</label>
+                                <ul class="nested">
+                                     <li><input type="checkbox" id="item-85" data-level="3"><label for="item-85">1. Initialization: Convert to standard form and create the initial tableau.</label></li>
+                                     <li><input type="checkbox" id="item-86" data-level="3"><label for="item-86">2. Optimality Test: Check the last row for non-negative (maximization) or non-positive (minimization) coefficients.</label></li>
+                                     <li>
+                                        <input type="checkbox" id="item-87" data-level="3"><label for="item-87">3. Iteration:</label>
+                                        <ul class="nested">
+                                            <li><input type="checkbox" id="item-88" data-level="4"><label for="item-88">Determine the entering variable (pivot column).</label></li>
+                                            <li><input type="checkbox" id="item-89" data-level="4"><label for="item-89">Determine the leaving variable using the minimum ratio test (pivot row).</label></li>
+                                            <li><input type="checkbox" id="item-90" data-level="4"><label for="item-90">Solve for the new BFS using row operations.</label></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="item-91" data-level="1"><label for="item-91">3.3. The Big M Method</label>
+                        <ul class="nested">
+                            <li><input type="checkbox" id="item-92" data-level="2"><label for="item-92">Purpose: Used for problems with artificial variables.</label></li>
+                            <li><input type="checkbox" id="item-93" data-level="2"><label for="item-93">Procedure: Add a large penalty (M) to the objective function for each artificial variable.</label></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="item-94" data-level="1"><label for="item-94">3.4. Special Cases in the Simplex Method</label>
+                        <ul class="nested">
+                            <li><input type="checkbox" id="item-95" data-level="2"><label for="item-95">Infeasible Solution: An artificial variable remains basic with a non-zero value in the final tableau.</label></li>
+                            <li><input type="checkbox" id="item-96" data-level="2"><label for="item-96">Unbounded Solution: No positive ratio exists when determining the leaving variable.</label></li>
+                            <li><input type="checkbox" id="item-97" data-level="2"><label for="item-97">Multiple Optimal Solutions: A non-basic variable has a zero in the last row of the optimal tableau.</label></li>
+                            <li><input type="checkbox" id="item-98" data-level="2"><label for="item-98">Degenerate Solution: A basic variable has a value of zero.</label></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <input type="checkbox" id="item-99" data-level="0"><label for="item-99">4. Duality and Sensitivity Analysis</label>
+                <ul class="nested">
+                    <li>
+                        <input type="checkbox" id="item-100" data-level="1"><label for="item-100">4.1. Duality Theory</label>
+                        <ul class="nested">
+                            <li><input type="checkbox" id="item-101" data-level="2"><label for="item-101">Primal and Dual Problems: Every LP has a corresponding dual problem.</label></li>
+                            <li>
+                                <input type="checkbox" id="item-102" data-level="2"><label for="item-102">Relationship:</label>
+                                <ul class="nested">
+                                    <li><input type="checkbox" id="item-103" data-level="3"><label for="item-103">The dual of a maximization problem is a minimization problem and vice-versa.</label></li>
+                                    <li><input type="checkbox" id="item-104" data-level="3"><label for="item-104">The number of decision variables in the dual equals the number of constraints in the primal.</label></li>
+                                    <li><input type="checkbox" id="item-105" data-level="3"><label for="item-105">The coefficients of the objective function in the primal become the right-hand side values in the dual.</label></li>
+                                </ul>
+                            </li>
+                            <li><input type="checkbox" id="item-106" data-level="2"><label for="item-106">Computational Effort: Used to decide whether to solve the primal or the dual problem.</label></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="item-107" data-level="1"><label for="item-107">4.2. Dual Simplex Method</label>
+                        <ul class="nested">
+                            <li><input type="checkbox" id="item-108" data-level="2"><label for="item-108">Condition: Used when the initial basic solution is "super-optimal" but infeasible.</label></li>
+                            <li>
+                                <input type="checkbox" id="item-109" data-level="2"><label for="item-109">Steps:</label>
+                                <ul class="nested">
+                                    <li><input type="checkbox" id="item-110" data-level="3"><label for="item-110">1. Convert all constraints to '≤'.</label></li>
+                                    <li><input type="checkbox" id="item-111" data-level="3"><label for="item-111">2. Select the leaving variable from the row with the most negative RHS.</label></li>
+                                    <li><input type="checkbox" id="item-112" data-level="3"><label for="item-112">3. Select the entering variable by a ratio test on the last row.</label></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="item-113" data-level="1"><label for="item-113">4.3. Sensitivity Analysis</label>
+                        <ul class="nested">
+                            <li><input type="checkbox" id="item-114" data-level="2"><label for="item-114">Purpose: To study how changes in the model's parameters affect the optimal solution.</label></li>
+                            <li>
+                                <input type="checkbox" id="item-115" data-level="2"><label for="item-115">Types of Changes:</label>
+                                <ul class="nested">
+                                    <li><input type="checkbox" id="item-116" data-level="3"><label for="item-116">Modification of the cost vector ($C^T$).</label></li>
+                                    <li><input type="checkbox" id="item-117" data-level="3"><label for="item-117">Modification of the requirement vector (b).</label></li>
+                                    <li><input type="checkbox" id="item-118" data-level="3"><label for="item-118">Modification of the matrix coefficients (A).</label></li>
+                                    <li><input type="checkbox" id="item-119" data-level="3"><label for="item-119">Adding a new variable.</label></li>
+                                    <li><input type="checkbox" id="item-120" data-level="3"><label for="item-120">Adding a new constraint.</label></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <input type="checkbox" id="item-121" data-level="0"><label for="item-121">5. Integer Programming (IP)</label>
+                <ul class="nested">
+                    <li>
+                        <input type="checkbox" id="item-122" data-level="1"><label for="item-122">5.1. Introduction to Integer Programming</label>
+                        <ul class="nested">
+                            <li><input type="checkbox" id="item-123" data-level="2"><label for="item-123">Definition: LP problems where some or all decision variables must be integers.</label></li>
+                            <li>
+                                <input type="checkbox" id="item-124" data-level="2"><label for="item-124">Types:</label>
+                                <ul class="nested">
+                                    <li><input type="checkbox" id="item-125" data-level="3"><label for="item-125">Pure IP: All variables are integers.</label></li>
+                                    <li><input type="checkbox" id="item-126" data-level="3"><label for="item-126">Mixed IP: Some variables are integers.</label></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="item-127" data-level="1"><label for="item-127">5.2. Challenges with Solving IP Problems</label>
+                        <ul class="nested">
+                            <li><input type="checkbox" id="item-128" data-level="2"><label for="item-128">Complexity: IPs are significantly harder to solve than LPs.</label></li>
+                            <li><input type="checkbox" id="item-129" data-level="2"><label for="item-129">Rounding Issues: Rounding the LP optimal solution can lead to infeasible, non-optimal, or optimal solutions.</label></li>
+                            <li><input type="checkbox" id="item-130" data-level="2"><label for="item-130">Enumeration: Exhaustive enumeration is often not feasible due to the large number of possible solutions.</label></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="item-131" data-level="1"><label for="item-131">5.3. Solution Methods</label>
+                        <ul class="nested">
+                            <li><input type="checkbox" id="item-132" data-level="2"><label for="item-132">Rounding: A simple but often inaccurate method.</label></li>
+                            <li><input type="checkbox" id="item-133" data-level="2"><label for="item-133">Epsilon-Close Method: An alternative approach to find integer solutions near the LP optimum.</label></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <input type="checkbox" id="item-134" data-level="0"><label for="item-134">6. Transportation and Assignment Problems</label>
+                <ul class="nested">
+                    <li>
+                        <input type="checkbox" id="item-135" data-level="1"><label for="item-135">6.1. Transportation Problem</label>
+                        <ul class="nested">
+                            <li><input type="checkbox" id="item-136" data-level="2"><label for="item-136">Description: A special type of LP problem to minimize the cost of distributing a product from sources to destinations.</label></li>
+                            <li>
+                                <input type="checkbox" id="item-137" data-level="2"><label for="item-137">Algorithm:</label>
+                                <ul class="nested">
+                                    <li>
+                                        <input type="checkbox" id="item-138" data-level="3"><label for="item-138">1. Find an initial basic feasible solution.</label>
+                                        <ul class="nested">
+                                            <li><input type="checkbox" id="item-139" data-level="4"><label for="item-139">North-West Corner Rule: Simple but not cost-effective.</label></li>
+                                            <li><input type="checkbox" id="item-140" data-level="4"><label for="item-140">Vogel's Approximation Method (VAM): More effective at finding a good initial solution.</label></li>
+                                        </ul>
+                                    </li>
+                                    <li><input type="checkbox" id="item-141" data-level="3"><label for="item-141">2. Test for optimality using the Modified Distribution (MODI) method or stepping-stone method ($C_{ij} – U_i – V_j \geq 0$).</label></li>
+                                    <li><input type="checkbox" id="item-142" data-level="3"><label for="item-142">3. Improve the solution by finding cycles for negative non-basic variable evaluations.</label></li>
+                                </ul>
+                            </li>
+                            <li><input type="checkbox" id="item-143" data-level="2"><label for="item-143">Unbalanced Problems: Handled by adding dummy sources or destinations.</label></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="item-144" data-level="1"><label for="item-144">6.2. Transshipment Problem</label>
+                        <ul class="nested">
+                            <li><input type="checkbox" id="item-145" data-level="2"><label for="item-145">Description: Shipments can pass through intermediate nodes.</label></li>
+                            <li><input type="checkbox" id="item-146" data-level="2"><label for="item-146">Solution: Convert to a transportation problem by treating junction points as both sources and destinations.</label></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="item-147" data-level="1"><label for="item-147">6.3. Production Scheduling Problems</label>
+                        <ul class="nested">
+                            <li><input type="checkbox" id="item-148" data-level="2"><label for="item-148">Description: Determining a production schedule to meet demands over time at minimum cost.</label></li>
+                            <li><input type="checkbox" id="item-149" data-level="2"><label for="item-149">Solution: Can be formulated as a transportation problem.</label></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="item-150" data-level="1"><label for="item-150">6.4. Assignment Problem</label>
+                        <ul class="nested">
+                            <li><input type="checkbox" id="item-151" data-level="2"><label for="item-151">Description: Assigning n jobs to n machines to minimize total cost.</label></li>
+                            <li><input type="checkbox" id="item-152" data-level="2"><label for="item-152">Relationship to Transportation: A special case of the transportation problem where all supplies and demands are 1.</label></li>
+                            <li><input type="checkbox" id="item-153" data-level="2"><label for="item-153">Mathematical Model: Uses binary variables ($x_{ij} = 0$ or 1).</label></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        const treeContainer = document.getElementById('orTree');
+
+        function loadCheckStatus() {
+            const checkboxes = document.querySelectorAll('#orTree input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                const savedState = localStorage.getItem(checkbox.id);
+                if (savedState !== null) {
+                    checkbox.checked = savedState === 'true';
+                }
+                // Initialize data-level for existing checkboxes if not set by HTML
+                if (!checkbox.dataset.level) {
+                    let level = 0;
+                    let parent = checkbox.closest('ul');
+                    while(parent && parent.id !== 'orTree') {
+                        level++;
+                        parent = parent.parentElement.closest('ul');
+                    }
+                    checkbox.dataset.level = level;
+                }
+            });
+            // After loading, update parent states based on children
+            // Run this for all checkboxes to ensure initial state is correct
+            checkboxes.forEach(checkbox => {
+                 updateParentState(checkbox);
+            });
+        }
+
+        function saveCheckStatus(checkbox) {
+            localStorage.setItem(checkbox.id, checkbox.checked);
+        }
+
+        function updateChildrenState(parentCheckbox, isChecked) {
+            const parentLi = parentCheckbox.closest('li');
+            const childCheckboxes = parentLi.querySelectorAll('.nested input[type="checkbox"]');
+            childCheckboxes.forEach(child => {
+                if (child.checked !== isChecked) { // Only update if state is different
+                    child.checked = isChecked;
+                    saveCheckStatus(child);
+                }
+            });
+        }
+
+        function updateParentState(childCheckbox) {
+            let current = childCheckbox;
+            while (true) {
+                const parentUl = current.closest('ul');
+                if (!parentUl || parentUl.id === 'orTree') break; // Stop if no parent UL or it's the root
+
+                const parentLi = parentUl.closest('li');
+                if (!parentLi) break;
+
+                const parentCheckbox = parentLi.querySelector(':scope > input[type="checkbox"]');
+                if (!parentCheckbox) break;
+
+                const siblingCheckboxes = Array.from(parentUl.children)
+                                              .map(li => li.querySelector(':scope > input[type="checkbox"]'))
+                                              .filter(cb => cb !== null);
+
+
+                if (siblingCheckboxes.length === 0) { // No siblings to check against
+                    current = parentCheckbox;
+                    continue;
+                }
+                
+                const allChildrenChecked = siblingCheckboxes.every(cb => cb.checked);
+                const someChildrenChecked = siblingCheckboxes.some(cb => cb.checked);
+
+                let changed = false;
+                if (parentCheckbox.checked !== allChildrenChecked) {
+                     parentCheckbox.checked = allChildrenChecked;
+                     changed = true;
+                }
+                
+                // Set indeterminate state
+                // Indeterminate should be true if some children are checked OR some children are indeterminate,
+                // but not all children are fully checked.
+                const anyChildIndeterminate = siblingCheckboxes.some(cb => cb.indeterminate);
+                const newIndeterminateState = (someChildrenChecked || anyChildIndeterminate) && !allChildrenChecked;
+
+                if (parentCheckbox.indeterminate !== newIndeterminateState) {
+                    parentCheckbox.indeterminate = newIndeterminateState;
+                    // Note: Saving indeterminate state to localStorage is not standard,
+                    // so we don't save it, it's purely a visual state derived at runtime.
+                }
+                
+                if (changed) {
+                    saveCheckStatus(parentCheckbox);
+                }
+
+                if (!changed && parentCheckbox.indeterminate === newIndeterminateState) { // If nothing changed, no need to go further up
+                   // break; // Optimization: if parent state didn't change, further parents won't either.
+                            // Caveat: This optimization might fail if an indeterminate state change should propagate upwards.
+                            // For safety, let it always propagate, or ensure indeterminate logic is perfect.
+                }
+                current = parentCheckbox;
+            }
+        }
+
+        treeContainer.addEventListener('change', function(event) {
+            if (event.target.type === 'checkbox') {
+                const checkbox = event.target;
+                saveCheckStatus(checkbox); // Save its own state first
+                updateChildrenState(checkbox, checkbox.checked); // Then update children
+                updateParentState(checkbox); // Then update parents
+            }
+        });
+        
+        // Ensure MathJax typesets any math in labels after tree is ready
+        function typesetMathJax() {
+            if (typeof MathJax !== 'undefined') {
+                MathJax.typesetPromise && MathJax.typesetPromise();
+            }
+        }
+
+        // Initial load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadCheckStatus();
+            typesetMathJax(); // Typeset after loading statuses and building tree
+        });
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</body>
+</html> 
